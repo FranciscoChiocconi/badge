@@ -152,7 +152,7 @@
             document.getElementById("tt").innerHTML =
               ("0" + (dt.getMonth() + 1)).slice(-2) +
               "/" +
-              ("0" + dt.getDate() + 1).slice(-2) +
+              ("0" + dt.getDate()).slice(-2) +
               "/" +
               dt.getFullYear() +
               hour +
@@ -164,7 +164,7 @@
             document.getElementById("tt").innerHTML =
               ("0" + (dt.getMonth() + 1)).slice(-2) +
               "/" +
-              ("0" + (dt.getDate() + 1)).slice(-2) +
+              ("0" + dt.getDate()).slice(-2) +
               "/" +
               dt.getFullYear() +
               " " +
@@ -177,13 +177,14 @@
           document.getElementById("tt").innerHTML =
             ("0" + (dt.getMonth() + 1)).slice(-2) +
             "/" +
-            ("0" + (dt.getDate() + 1)).slice(-2) +
+            ("0" + dt.getDate()).slice(-2) +
             "/" +
             dt.getFullYear() +
+            " " +
             hour +
             ":" +
             minute +
-            " AM";
+            " PM";
         }
         var time = setTimeout(digi, 1000);
       }
@@ -208,7 +209,7 @@
               "Next Survey Due: " +
               ("0" + (dt.getMonth() + 1)).slice(-2) +
               "/" +
-              ("0" + dt.getDate() + 1).slice(-2) +
+              ("0" + dt.getDate()).slice(-2) +
               "/" +
               dt.getFullYear() +
               " 10:00 AM";
@@ -218,7 +219,7 @@
               "Next Survey Due: " +
               ("0" + (dt.getMonth() + 1)).slice(-2) +
               "/" +
-              ("0" + dt.getDate() + 1).slice(-2) +
+              ("0" + dt.getDate()).slice(-2) +
               "/" +
               dt.getFullYear() +
               " 10:00 AM";
@@ -228,7 +229,7 @@
             "Next Survey Due: " +
             ("0" + (dt.getMonth() + 1)).slice(-2) +
             "/" +
-            ("0" + dt.getDate() + 1).slice(-2) +
+            ("0" + dt.getDate()).slice(-2) +
             "/" +
             dt.getFullYear() +
             " 10:00 AM";
