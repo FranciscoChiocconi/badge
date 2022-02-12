@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body
+    style="
+      background-color: limegreen;
+      height: 100vh;
+      font-family: sans-serif;
+      width: 100vw;
+    "
+    onload="digi(), duedate()"
+  >
+    <p
+      style="
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+      "
+    >
+      Clearance Status
+    </p>
+    <p
+      style="
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        padding: 0px;
+        margin-top: -15px;
+      "
+    >
+      Cleared
+    </p>
+    <p
+      id="tt"
+      style="
+        margin-top: -35px;
+        text-align: center;
+        font-size: 25px;
+        color: white;
+        font-weight: 550;
+      "
+    ></p>
+    <img
+      src="Images/me.png"
+      style="
+        max-width: 170px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -20px;
+      "
+    />
+
+    <h3
+      style="text-align: center; color: white; font-size: 20px; margin-top: 4px"
+    >
+      <strong> FRANCISCO CHIOCCONI </strong>
+    </h3>
+
+    <p
+      style="
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        margin-top: -15px;
+        font-weight: bold;
+      "
+    >
+      Jul 27
+    </p>
+
+    <p
+      style="
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        margin-top: 4px;
+        margin-top: -15px;
+        font-weight: 550;
+      "
+    >
+      #17090786
+    </p>
+
+    <img
+      src="Images/qr.png"
+      style="
+        max-width: 120px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -10px;
+      "
+    />
+
+    <p
+      id="duedate"
+      style="
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        margin-top: 4px;
+        margin-top: 5px;
+        font-weight: 550;
+      "
+    ></p>
+
+    <p
+      style="
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        margin-top: 4px;
+        margin-top: -10px;
+        font-weight: 550;
+      "
+    >
+      Compliant with Standard Requirements
+    </p>
+
+    <script type="text/javascript">
+      function digi() {
+        var date = new Date(),
+          hour = date.getHours(),
+          minute = checkTime(date.getMinutes()),
+          ss = checkTime(date.getSeconds());
+
+        function checkTime(i) {
+          if (i < 10) {
+            i = "0" + i;
+          }
+          return i;
+        }
+
+        if (hour > 12) {
+          hour = hour - 12;
+          if (hour == 12) {
+            hour = checkTime(hour);
+            document.getElementById("tt").innerHTML =
+              ("0" + (dt.getMonth() + 1)).slice(-2) +
+              "/" +
+              ("0" + dt.getDate() + 1).slice(-2) +
+              "/" +
+              dt.getFullYear() +
+              hour +
+              ":" +
+              minute +
+              " AM";
+          } else {
+            hour = checkTime(hour);
+            document.getElementById("tt").innerHTML =
+              ("0" + (dt.getMonth() + 1)).slice(-2) +
+              "/" +
+              ("0" + (dt.getDate() + 1)).slice(-2) +
+              "/" +
+              dt.getFullYear() +
+              " " +
+              hour +
+              ":" +
+              minute +
+              " PM";
+          }
+        } else {
+          document.getElementById("tt").innerHTML =
+            ("0" + (dt.getMonth() + 1)).slice(-2) +
+            "/" +
+            ("0" + (dt.getDate() + 1)).slice(-2) +
+            "/" +
+            dt.getFullYear() +
+            hour +
+            ":" +
+            minute +
+            " AM";
+        }
+        var time = setTimeout(digi, 1000);
+      }
+      function duedate() {
+        var date = new Date(),
+          hour = date.getHours(),
+          minute = checkTime(date.getMinutes()),
+          ss = checkTime(date.getSeconds());
+
+        function checkTime(i) {
+          if (i < 10) {
+            i = "0" + i;
+          }
+          return i;
+        }
+
+        if (hour > 12) {
+          hour = hour - 12;
+          if (hour == 12) {
+            hour = checkTime(hour);
+            document.getElementById("duedate").innerHTML =
+              "Next Survey Due: " +
+              ("0" + (dt.getMonth() + 1)).slice(-2) +
+              "/" +
+              ("0" + dt.getDate() + 1).slice(-2) +
+              "/" +
+              dt.getFullYear() +
+              " 10:00 AM";
+          } else {
+            hour = checkTime(hour);
+            document.getElementById("duedate").innerHTML =
+              "Next Survey Due: " +
+              ("0" + (dt.getMonth() + 1)).slice(-2) +
+              "/" +
+              ("0" + dt.getDate() + 1).slice(-2) +
+              "/" +
+              dt.getFullYear() +
+              " 10:00 AM";
+          }
+        } else {
+          document.getElementById("duedate").innerHTML =
+            "Next Survey Due: " +
+            ("0" + (dt.getMonth() + 1)).slice(-2) +
+            "/" +
+            ("0" + dt.getDate() + 1).slice(-2) +
+            "/" +
+            dt.getFullYear() +
+            " 10:00 AM";
+        }
+        var time = setTimeout(duedate, 1000);
+      }
+      var dt = new Date();
+    </script>
+  </body>
+</html>
